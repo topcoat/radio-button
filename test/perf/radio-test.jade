@@ -1,0 +1,12 @@
+- var repeats = 200
+doctype 5
+html
+	head
+		title Topcoat radio button test
+		link(rel='stylesheet', type='text/css', href='../../release/css/topcoat-radio-input.min.css')
+	body
+		- while (repeats > 0)
+			- var repeats = repeats - 1
+			p
+				input(type='radio', id='radio-button--left' + repeats)
+				label(for='radio-button--left' + repeats, class='topcoat-radio-label--left') Extremely Long Label
