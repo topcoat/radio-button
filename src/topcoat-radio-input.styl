@@ -1,4 +1,4 @@
-@import input-mixin
+@import radio-input-mixin
 
 /*
  Radio input
@@ -24,22 +24,21 @@ input[type="radio"]
 
 .topcoat-radio-label--left:before,
 .topcoat-radio-label--right:after
-  background-position left -109px;
+  background-position left var-bg-pos
 
 input[type="radio"]:checked + .topcoat-radio-label--left:before,
 input[type="radio"]:checked + .topcoat-radio-label--right:after
-  background-position left -74px
-
+  background-position left var-bg-pos--checked
 
 .topcoat-radio-label--left:before,
 .topcoat-radio-label--right:after
   content ""
   display inline-block
-  width 37px
-  height 31px
+  width var-width
+  height var-height
   background-image var-radio-background
   background-repeat no-repeat
-  background-size 37px
+  background-size var-bg-size
   cursor pointer
 
 .topcoat-radio-label--left:before
@@ -50,25 +49,13 @@ input[type="radio"]:checked + .topcoat-radio-label--right:after
 
 .topcoat-radio-label--left,
 .topcoat-radio-label--right
-  box-sizing border-box
-  padding 0 1.25rem
-  margin 5px
-  outline none
-  font var-font
-  font-weight var-font-weight
-  line-height 30px
+  reset-label()
   vertical-align top
-  user-select none
-  -webkit-touch-callout none
-  -webkit-user-select none
+  margin var-label-margin
+  padding var-label-padding
+  line-height var-line-height
 
-input[type="radio"]:disabled + label
-  opacity 0.3
-  cursor default
-  pointer-events none
-
+input[type="radio"]:disabled + label,
 input[type="radio"].is-disabled + label,
 input[type="radio"].is-disabled + label
-  opacity 0.3
-  cursor default
-  pointer-events none
+  disabled()

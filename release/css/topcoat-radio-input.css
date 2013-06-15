@@ -62,23 +62,17 @@ input[type="radio"]:checked + .topcoat-radio-label--right:after {
 }
 .topcoat-radio-label--left,
 .topcoat-radio-label--right {
-  box-sizing: border-box;
-  padding: 0 1.25rem;
-  margin: 5px;
   outline: none;
-  font: 1em "Source Sans", helvetica, arial, sans-serif;
-  font-weight: 200;
-  line-height: 30px;
-  vertical-align: top;
+  box-sizing: border-box;
   user-select: none;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
+  vertical-align: top;
+  margin: 5px;
+  padding: 0 1.25rem;
+  line-height: 30px;
 }
-input[type="radio"]:disabled + label {
-  opacity: 0.3;
-  cursor: default;
-  pointer-events: none;
-}
+input[type="radio"]:disabled + label,
 input[type="radio"].is-disabled + label,
 input[type="radio"].is-disabled + label {
   opacity: 0.3;
