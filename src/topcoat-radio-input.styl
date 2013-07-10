@@ -24,29 +24,29 @@ input[type="radio"]
 
 .topcoat-radio-label--left:before,
 .topcoat-radio-label--right:after
-  background-position left -109px;
+  background-position left var-radio-offset
 
 input[type="radio"]:checked + .topcoat-radio-label--left:before,
 input[type="radio"]:checked + .topcoat-radio-label--right:after
-  background-position left -74px
+  background-position left var-radio-offset--checked
 
 
 .topcoat-radio-label--left:before,
 .topcoat-radio-label--right:after
   content ""
   display inline-block
-  width 37px
-  height 31px
+  width var-radio-width
+  height var-radio-height
   background-image var-radio-background
   background-repeat no-repeat
-  background-size 37px
+  background-size var-radio-bgsize
   cursor pointer
 
 .topcoat-radio-label--left:before
-  margin-right 15px
+  margin-right var-radio-margin
 
 .topcoat-radio-label--right:after
-  margin-left 15px
+  margin-left var-radio-margin
 
 .topcoat-radio-label--left,
 .topcoat-radio-label--right
@@ -54,9 +54,8 @@ input[type="radio"]:checked + .topcoat-radio-label--right:after
   padding 0 1.25rem
   margin 5px
   outline none
-  font var-font
   font-weight var-font-weight
-  line-height 30px
+  line-height var-radio-line-height
   vertical-align top
   user-select none
   -webkit-touch-callout none

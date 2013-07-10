@@ -37,3 +37,18 @@ exports.styleguide = {
     test.done();
   }
 };
+
+exports.variableTest = {
+  setUp: function(done) {
+    // setup here if necessary
+    done();
+  },
+  stylus: function(test) {
+    test.expect(1);
+
+    var actual = grunt.file.read('release/css/topcoat-radio-input.css');
+    test.equal(actual.match(/var-/g), null, 'should not have missing vars');
+
+    test.done();
+  }
+};

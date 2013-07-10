@@ -66,9 +66,8 @@ input[type="radio"]:checked + .topcoat-radio-label--right:after {
   padding: 0 1.25rem;
   margin: 5px;
   outline: none;
-  font: 1em "Source Sans", helvetica, arial, sans-serif;
   font-weight: 200;
-  line-height: 30px;
+  line-height: 31px;
   vertical-align: top;
   user-select: none;
   -webkit-touch-callout: none;
