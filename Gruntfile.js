@@ -31,8 +31,8 @@ module.exports = function(grunt) {
             stylus: {
         compile: {
                 options: {
-                    paths: ['src/', 'node_modules/topcoat-utils/src/mixins', 'node_modules/topcoat-input-base/src/mixins', 'node_modules/topcoat-theme/src', 'node_modules/topcoat-theme/src/includes'],
-                    import: ['input-mixin', 'utils', 'theme-topcoat-mobile-light', 'copyright.styl', 'global', 'fonts'],
+                    paths: ['node_modules/topcoat-utils/src/mixins', 'node_modules/topcoat-radio-input-base/src', 'node_modules/topcoat-theme/src', 'node_modules/topcoat-theme/src/includes'],
+                    import: ['utils', 'radio-input', 'theme-topcoat-mobile-dark', 'global', 'fonts'],
                     compress: false
                 },
                 files: [{
@@ -57,12 +57,6 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     flatten: true,
-                    src: 'node_modules/topcoat-theme/img/light-sprites2x.png',
-                    dest: 'img'
-                },
-                {
-                    expand: true,
-                    flatten: true,
                     src: 'node_modules/topcoat-theme/font/**/*',
                     dest: 'font'
                 }]
@@ -81,10 +75,6 @@ module.exports = function(grunt) {
 
 
         simplemocha: {
-            options: {
-                ui: 'bdd',
-                reporter: 'Nyan'
-            },
             all: {
                 src: ['test/*.test.js']
             }
@@ -92,7 +82,7 @@ module.exports = function(grunt) {
 
         watch: {
             files: 'src/**/*.styl',
-            tasks: ['build', 'test']
+            tasks: ['build']
         }
 
     });
