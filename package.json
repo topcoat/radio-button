@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "topcoat-utils": "~0.1.1",
-    "topcoat-input-base": "~0.3.0",
+    "topcoat-radio-input-base": "~0.0.1",
     "topcoat-theme": "~0.4.0"
   }
 }

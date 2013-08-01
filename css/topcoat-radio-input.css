@@ -1,21 +1,40 @@
-/*
-Copyright 2012 Adobe Systems Inc.;
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
+input[type="radio"] {
+  position: absolute;
+  left: -9999px;
+}
+input[type="radio"]:disabled + label {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+.radio,
+.topcoat-radio {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+.radio__label,
+.topcoat-radio__label,
+.topcoat-radio__label--left,
+.topcoat-radio__label--right {
+  cursor: default;
+  user-select: none;
+}
+.radio__label:before,
+.radio__label:after,
+.topcoat-radio__label:before,
+.topcoat-radio__label--right:before,
+.topcoat-radio__label--left:before,
+.topcoat-radio__label:after,
+.topcoat-radio__label--left:after,
+.topcoat-radio__label--right:after {
+  content: '';
+  position: absolute;
+}
 body {
   margin: 0;
   padding: 0;
-  background: #dfe2e2;
+  background: #3a3f42 url("../img/bg_dark.png") repeat-x;
   color: #000;
   font: 16px "Source Sans", helvetica, arial, sans-serif;
   font-weight: 200;
@@ -35,74 +54,153 @@ body {
   src: url("../font/SourceSansPro-Semibold.otf");
   font-weight: 600;
 }
-/*
- Radio input
- --------
-
-Base styles for radio buttons. The `<label>` needs to be placed after the `<input>` element in the HTML. If you are using `.topcoat-checkbox-label--right`, make sure to set the width, so all the labels are the same width and the controls line up vertically.
-
-- `:disabled` Disabled state
-- `.is-disabled` Simulates a disabled state on mobile devices
-- `.topcoat-radio-label`
-- `.topcoat-radio-label--left` Position the control to the left of the label
-- `.topcoat-radio-label--right` Position the control to the right of the label
-
-    <input type='radio' id='example-radio-input'>
-    <label for='example-radio-input' class='topcoat-radio-label--left'> Label title </label>
-
-    <input type='radio' id='example-radio-input is-disabled' disabled>
-    <label for='example-radio-input' class='topcoat-radio-label--left'> Label title </label>
-
+/**
+*
+* Copyright 2012 Adobe Systems Inc.;
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*
 */
-input[type="radio"] {
-  display: none;
+/* topdoc
+
+  name:
+    radio
+
+  description:
+    Default  styles for Topcoat radioes.
+    The `<label>` needs to be placed after the `<input>` element in the HTML.
+
+    .topcoat-radio
+    .topcoat-radio__label--left Position the control to the left of the label
+    .topcoat-radio__label--right Position the control to the right of the label
+
+  modifiers:
+    :focus - Focus state
+    .is-focused - Simulates an focus state on mobile devices
+    :disabled - Disabled state
+    .is-disabled - Simulates a disabled state on mobile devices
+
+
+  examples:
+
+    <!-- No label -->
+
+    <div class="topcoat-radio">
+      <input type="radio" id="radio1">
+      <label for="radio1" class="topcoat-radio__label"></label>
+    </div>
+
+    <div class="topcoat-radio">
+      <input type="radio" id="radio2" checked="checked">
+      <label for="radio2" class="topcoat-radio__label"></label>
+    </div>
+
+    <div class="topcoat-radio is-disabled">
+      <input type="radio" id="radio3">
+      <label for="radio3" class="topcoat-radio__label"></label>
+    </div>
+
+    <!-- Label on right side -->
+
+    <div class="topcoat-radio">
+      <input type="radio" id="radio4">
+      <label for="radio4" class="topcoat-radio__label--right">Label on the right</label>
+    </div>
+
+    <div class="topcoat-radio">
+      <input type="radio" id="radio5" checked="checked">
+      <label for="radio5" class="topcoat-radio__label--right">Label on the right</label>
+    </div>
+
+    <div class="topcoat-radio is-disabled">
+      <input type="radio" id="radio6">
+      <label for="radio6" class="topcoat-radio__label--right">Label on the right</label>
+    </div>
+
+    <!-- Label on left side -->
+
+    <div class="topcoat-radio">
+      <input type="radio" id="radio7">
+      <label for="radio7" class="topcoat-radio__label--left">Label on the left</label>
+    </div>
+
+    <div class="topcoat-radio">
+      <input type="radio" id="radio8" checked="checked">
+      <label for="radio8" class="topcoat-radio__label--left">Label on the left</label>
+    </div>
+
+    <div class="topcoat-radio is-disabled">
+      <input type="radio" id="radio9">
+      <label for="radio9" class="topcoat-radio__label--left">Label on the left</label>
+    </div>
+*/
+.topcoat-radio {
+  height: 2.5rem;
 }
-.topcoat-radio-label--left:before,
-.topcoat-radio-label--right:after {
-  background-position: left -109px;
+input[type="radio"]:checked + label:after {
+  opacity: 1;
 }
-input[type="radio"]:checked + .topcoat-radio-label--left:before,
-input[type="radio"]:checked + .topcoat-radio-label--right:after {
-  background-position: left -74px;
-}
-.topcoat-radio-label--left:before,
-.topcoat-radio-label--right:after {
-  content: "";
-  display: inline-block;
-  width: 37px;
-  height: 31px;
-  background-image: url("../img/light-sprites2x.png");
-  background-repeat: no-repeat;
-  background-size: 37px;
+.topcoat-radio__label:before,
+.topcoat-radio__label--right:before,
+.topcoat-radio__label--left:before {
+  width: 2rem;
+  height: 2rem;
+  background: #595b5b;
+  border: 1px solid rgba(0,0,0,0.36);
+  border-radius: 50%;
   cursor: pointer;
+  box-shadow: inset 0 1px rgba(255,255,255,0.12);
 }
-.topcoat-radio-label--left:before {
-  margin-right: 15px;
+input[type="radio"]:focus + .topcoat-radio__label:before {
+  box-shadow: 0 0 3px #6fb5f1;
 }
-.topcoat-radio-label--right:after {
-  margin-left: 15px;
+.topcoat-radio__label--right:before {
+  left: 0;
 }
-.topcoat-radio-label--left,
-.topcoat-radio-label--right {
-  box-sizing: border-box;
-  padding: 0 1.25rem;
-  margin: 5px;
-  outline: none;
+.topcoat-radio__label--left:before {
+  right: 0;
+}
+.topcoat-radio__label,
+.topcoat-radio__label--left,
+.topcoat-radio__label--right {
+  padding-right: 2rem;
+  line-height: 2.5rem;
   font-weight: 200;
-  line-height: 31px;
-  vertical-align: top;
-  user-select: none;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
+  color: #c6c8c8;
 }
-input[type="radio"]:disabled + label {
-  opacity: 0.3;
-  cursor: default;
-  pointer-events: none;
+.topcoat-radio__label--left {
+  padding-right: 3rem;
 }
-input[type="radio"].is-disabled + label,
-input[type="radio"].is-disabled + label {
-  opacity: 0.3;
-  cursor: default;
-  pointer-events: none;
+.topcoat-radio__label--right {
+  padding-right: 0;
+  padding-left: 3rem;
+}
+.topcoat-radio__label:after,
+.topcoat-radio__label--left:after,
+.topcoat-radio__label--right:after {
+  opacity: 0;
+  width: 1.1rem;
+  height: 1.1rem;
+  left: 50%;
+  top: 50%;
+  margin-left: -8px;
+  margin-top: -2px;
+  background: #666;
+  border-radius: 50%;
+}
+.topcoat-radio__label--left:after {
+  right: -5px;
+}
+.topcoat-radio__label--right:after {
+  left: 2px;
 }
