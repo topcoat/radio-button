@@ -145,6 +145,7 @@ input[type="radio"]:checked + .topcoat-radio-button:after {
   opacity: 1;
 }
 .topcoat-radio-button__label {
+  color: #454545;
   line-height: 2rem;
 }
 .topcoat-radio-button:before {
