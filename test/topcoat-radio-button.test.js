@@ -21,17 +21,17 @@
 var grunt = require('grunt'),
     assert = require('assert');
 
-describe('Topcoat radio input', function() {
+describe('Topcoat Radio Button', function() {
     'use strict';
 
     it('should output correct css', function() {
-        var actual = grunt.file.read('css/topcoat-radio-input.css');
-        var expected = grunt.file.read('test/expected/topcoat-radio-input.css');
+        var actual = grunt.file.read('css/topcoat-radio-button.css');
+        var expected = grunt.file.read('test/expected/topcoat-radio-button.css');
         assert.equal(actual, expected, 'should generate correct css');
     });
 
     it('should not have any unrendered variables', function() {
-        var actual = grunt.file.read('css/topcoat-radio-input.css');
+        var actual = grunt.file.read('css/topcoat-radio-button.css');
         assert.equal(actual.match(/var-[a-z-]*[a-z]+/g), null, 'should not have missing vars');
     });
 

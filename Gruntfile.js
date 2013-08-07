@@ -28,18 +28,19 @@ module.exports = function(grunt) {
             release: ['css'],
         },
 
-            stylus: {
-        compile: {
-                options: {
-                    paths: ['src/', 'node_modules/topcoat-utils/src/mixins', 'node_modules/topcoat-input-base/src/mixins', 'node_modules/topcoat-theme/src', 'node_modules/topcoat-theme/src/includes'],
-                    import: ['input-mixin', 'utils', 'theme-topcoat-mobile-light', 'copyright.styl', 'global', 'fonts'],
-                    compress: false
-                },
-                files: [{
-                    src: 'src/topcoat-radio-input.styl',
-                    dest: 'css/topcoat-radio-input.css'
-                }]
-            }
+        stylus: {
+            compile: {
+                    options: {
+
+                        paths: ['node_modules/topcoat-utils/src/mixins', 'node_modules/topcoat-radio-button-base/src', 'node_modules/topcoat-theme/src', 'node_modules/topcoat-theme/src/includes'],
+                        import: ['theme-topcoat-mobile-light', 'global', 'fonts', 'nib'],
+                        compress: false
+                    },
+                    files: [{
+                        src: 'src/topcoat-radio-button.styl',
+                        dest: 'css/topcoat-radio-button.css'
+                    }]
+                }
         },
 
         cssmin: {
@@ -55,12 +56,6 @@ module.exports = function(grunt) {
         copy: {
             release: {
                 files: [{
-                    expand: true,
-                    flatten: true,
-                    src: 'node_modules/topcoat-theme/img/light-sprites2x.png',
-                    dest: 'img'
-                },
-                {
                     expand: true,
                     flatten: true,
                     src: 'node_modules/topcoat-theme/font/**/*',
@@ -81,10 +76,6 @@ module.exports = function(grunt) {
 
 
         simplemocha: {
-            options: {
-                ui: 'bdd',
-                reporter: 'Nyan'
-            },
             all: {
                 src: ['test/*.test.js']
             }
