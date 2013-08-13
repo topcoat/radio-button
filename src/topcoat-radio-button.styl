@@ -21,36 +21,24 @@
  Radio Button
  -----------
 
-  :active Active state
-
-  .is-active Simulates active state
-
-  :focused Focused state
-
-  .is-focused Simulates focused state
-
-  :disabled Disabled state
-
-  .is-disabled Simulates a disabled state
-
     <label class="topcoat-radio-button__label">
         Default
         <input type="radio" name="topcoat">
         <div class="topcoat-radio-button"></div>
     </label>
-
+    <br>
     <label class="topcoat-radio-button__label is-active">
         Active
         <input type="radio" name="topcoat">
         <div class="topcoat-radio-button"></div>
     </label>
-
+    <br>
     <label class="topcoat-radio-button__label is-focused">
         Focused
         <input type="radio" name="topcoat">
         <div class="topcoat-radio-button"></div>
     </label>
-
+    <br>
     <label class="topcoat-radio-button__label is-disabled">
         Disabled
         <input type="radio" name="topcoat">
@@ -98,7 +86,11 @@ input[type="radio"]:checked + .topcoat-radio-button:after
   border var-border--radio-button
   box-shadow var-box-shadow--radio-button
 
-input[type="radio"]:focus + .topcoat-radio-button:before
+input[type="radio"]:focus + .topcoat-radio-button:before,
+.topcoat-radio-button__label.is-focused > .topcoat-radio-button:before
   border var-border--focus
   box-shadow var-box-shadow--focus
 
+.topcoat-radio-button__label:disabled,
+.topcoat-radio-button__label.is-disabled
+  @extend .radio-button--disabled
