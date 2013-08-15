@@ -1,53 +1,161 @@
-<!DOCTYPE HTML>
-<!--
-/**
-*
-* Copyright 2012 Adobe Systems Inc.;
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*
-*/
--->
+<!DOCTYPE html>
 <html>
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <link rel="stylesheet" href="css/topcoat-radio-button.css" type="text/css" media="screen" charset="utf-8">
-    <title>Topcoat Radio Buttons</title>
-
-</head>
-<body>
-    <form>
-
-        <!-- NO LABEL -->
-        <label class="topcoat-radio-button__label">
-            <input type="radio" name="topcoat">
-            <div class="topcoat-radio-button"></div>
-        </label>
-
-        <!-- LEFT LABEL -->
-        <label class="topcoat-radio-button__label">
-            Left label
-            <input type="radio" name="topcoat">
-            <div class="topcoat-radio-button"></div>
-        </label>
-
-        <!-- RIGHT LABEL -->
-        <label class="topcoat-radio-button__label">
-            <input type="radio" name="topcoat">
-            <div class="topcoat-radio-button"></div>
-            Right label
-        </label>
-
-    </form>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Topcoat</title>
+    <meta name="viewport" content="user-scalable=no,initial-scale = 1.0,maximum-scale = 1.0">
+    <link rel="stylesheet" type="text/css" href="css/topcoat-radio-button.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/brackets.css"><!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  </head>
+  <body class="light">
+    <div id="wrapper">
+      <div class="max-width">
+        <div id="sideNav">
+          <nav class="site">
+            <ul>
+              <li><a href="http://topcoat.io">Home</a></li>
+              <li class="selected"><a href="http://topcoat.io/topcoat">Demo</a></li>
+              <li><a href="http://bench.topcoat.io/">Benchmarks</a></li>
+              <li><a href="http://topcoat.io/blog">Blog</a></li>
+            </ul>
+          </nav>
+          <div class="combo">
+            <select class="docNav">
+              <option value="index.html" selected="selected">Topcoat Radio Button</option>
+            </select>
+          </div>
+          <div id="pageNav">
+            <ul>
+              <li><a href="#radio-button">Radio Button</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="site">
+        <header id="main-header">
+          <div class="max-width">
+            <hgroup>
+              <h1>Topcoat</h1>
+              <p>CSS for clean and fast web apps</p>
+            </hgroup>
+            <nav>
+              <ul>
+                <li class="selected"><a href="http://topcoat.io/topcoat">Demo</a></li>
+                <li><a href="http://bench.topcoat.io/">Benchmarks</a></li>
+                <li><a href="http://topcoat.io/blog">Blog</a></li>
+                <li><a id="download-btn" href="https://github.com/topcoat/topcoat/archive/v0.6.0.zip" onclick="_gaq.push(['_trackEvent', 'download', 'click',,, false]);">Download version 0.6.0</a></li>
+              </ul>
+            </nav><a id="slide-menu-button" class="topcoat-icon-button--large--quiet"><span class="topcoat-icon--large topcoat-icon--menu-stack"></span></a>
+          </div>
+        </header>
+        <div id="content" class="max-width">
+          <article id="radio-button" class="component">
+            <header>
+              <h2>Radio Button</h2>
+            </header>
+            <section class="component"><!-- NO LABEL -->
+<label class="topcoat-radio-button__label">
+<input type="radio" name="topcoat">
+<div class="topcoat-radio-button"></div>
+</label>
+<br>
+<!-- LEFT LABEL -->
+<label class="topcoat-radio-button__label">
+Left label
+<input type="radio" name="topcoat">
+<div class="topcoat-radio-button"></div>
+</label>
+<br>
+<!-- RIGHT LABEL -->
+<label class="topcoat-radio-button__label">
+<input type="radio" name="topcoat">
+<div class="topcoat-radio-button"></div>
+Right label
+</label></section>
+            <footer>
+              <div class="showcode"><a href="#">Show code snippets</a></div>
+              <section class="code">
+                <div>
+                  <h3>HTML</h3>
+                  <pre class="html"><code data-language="html">&lt;!-- NO LABEL --&gt;
+&lt;label class=&quot;topcoat-radio-button__label&quot;&gt;
+&lt;input type=&quot;radio&quot; name=&quot;topcoat&quot;&gt;
+&lt;div class=&quot;topcoat-radio-button&quot;&gt;&lt;/div&gt;
+&lt;/label&gt;
+&lt;br&gt;
+&lt;!-- LEFT LABEL --&gt;
+&lt;label class=&quot;topcoat-radio-button__label&quot;&gt;
+Left label
+&lt;input type=&quot;radio&quot; name=&quot;topcoat&quot;&gt;
+&lt;div class=&quot;topcoat-radio-button&quot;&gt;&lt;/div&gt;
+&lt;/label&gt;
+&lt;br&gt;
+&lt;!-- RIGHT LABEL --&gt;
+&lt;label class=&quot;topcoat-radio-button__label&quot;&gt;
+&lt;input type=&quot;radio&quot; name=&quot;topcoat&quot;&gt;
+&lt;div class=&quot;topcoat-radio-button&quot;&gt;&lt;/div&gt;
+Right label
+&lt;/label&gt;</code></pre>
+                </div>
+                <div>
+                  <h3>CSS</h3>
+                  <pre class="css"><code data-language="css">input[type=&quot;radio&quot;] {
+  height: 2rem;
+  width: 2rem;
+  margin-top: 0;
+  margin-right: -2rem;
+  margin-bottom: -2rem;
+  margin-left: 0;
+}
+input[type=&quot;radio&quot;]:checked + .topcoat-radio-button:after {
+  opacity: 1;
+}
+.topcoat-radio-button__label {
+  color: #454545;
+  line-height: 2rem;
+}
+.topcoat-radio-button:before {
+  width: 2rem;
+  height: 2rem;
+  background: #e5e9e8;
+  border: 1px solid #a5a8a8;
+  -webkit-box-shadow: inset 0 1px #fff;
+  box-shadow: inset 0 1px #fff;
+}
+.topcoat-radio-button {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+}
+.topcoat-radio-button:after {
+  opacity: 0;
+  width: 1rem;
+  height: 1rem;
+  background: #666;
+  border: 1px solid rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 1px rgba(255,255,255,0.5);
+  box-shadow: 0 1px rgba(255,255,255,0.5);
+}
+input[type=&quot;radio&quot;]:focus + .topcoat-radio-button:before,
+.topcoat-radio-button__label.is-focused &gt; .topcoat-radio-button:before {
+  border: 1px solid #0940fd;
+  -webkit-box-shadow: 0 0 0 2px #6fb5f1;
+  box-shadow: 0 0 0 2px #6fb5f1;
+}
+</code></pre>
+                </div>
+              </section>
+            </footer>
+          </article>
+        </div>
+        <footer></footer>
+      </div>
+    </div>
+    <script src="//use.edgefonts.net/source-sans-pro:n3,n4,n6;source-code-pro:n3.js"></script>
+    <script src="js/rainbow-custom.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>

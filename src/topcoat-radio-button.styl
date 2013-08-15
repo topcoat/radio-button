@@ -21,30 +21,29 @@
  Radio Button
  -----------
 
-    <label class="topcoat-radio-button__label">
-        Default
-        <input type="radio" name="topcoat">
-        <div class="topcoat-radio-button"></div>
-    </label>
-    <br>
-    <label class="topcoat-radio-button__label is-active">
-        Active
-        <input type="radio" name="topcoat">
-        <div class="topcoat-radio-button"></div>
-    </label>
-    <br>
-    <label class="topcoat-radio-button__label is-focused">
-        Focused
-        <input type="radio" name="topcoat">
-        <div class="topcoat-radio-button"></div>
-    </label>
-    <br>
-    <label class="topcoat-radio-button__label is-disabled">
-        Disabled
-        <input type="radio" name="topcoat">
-        <div class="topcoat-radio-button"></div>
-    </label>
+ :disabled - Disabled state
 
+ .is-disabled - Simulates a disabled state on mobile devices
+
+    <!-- NO LABEL -->
+    <label class="topcoat-radio-button__label">
+        <input type="radio" name="topcoat">
+        <div class="topcoat-radio-button"></div>
+    </label>
+    <br>
+    <!-- LEFT LABEL -->
+    <label class="topcoat-radio-button__label">
+        Left label
+        <input type="radio" name="topcoat">
+        <div class="topcoat-radio-button"></div>
+    </label>
+    <br>
+    <!-- RIGHT LABEL -->
+    <label class="topcoat-radio-button__label">
+        <input type="radio" name="topcoat">
+        <div class="topcoat-radio-button"></div>
+        Right label
+    </label>
 */
 input[type="radio"]
   height var-size--radio-button

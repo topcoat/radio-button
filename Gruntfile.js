@@ -23,7 +23,8 @@ module.exports = function(grunt) {
 
     // Project configuration.
     grunt.initConfig({
-
+        pkg: grunt.file.readJSON('package.json'),
+        
         clean: {
             release: ['css'],
         },
@@ -31,7 +32,6 @@ module.exports = function(grunt) {
         stylus: {
             compile: {
                     options: {
-
                         paths: ['node_modules/topcoat-utils/src/mixins', 'node_modules/topcoat-radio-button-base/src', 'node_modules/topcoat-theme/src', 'node_modules/topcoat-theme/src/includes'],
                         import: ['theme-topcoat-mobile-light', 'global', 'fonts', 'nib'],
                         compress: false
@@ -42,7 +42,16 @@ module.exports = function(grunt) {
                     }]
                 }
         },
-
+        topdoc: {
+            usageguides: {
+                options: {
+                    source: 'css',
+                    destination: './',
+                    template: '<%= pkg.topdoc.template %>',
+                    templateData: '<%= pkg.topdoc.templateData %>'
+                }
+            }
+        },
         cssmin: {
             minify: {
                 expand: true,
@@ -96,11 +105,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-topdoc');
 
     // Default task.
     grunt.registerTask('default', ['clean', 'build', 'test', 'release']);
     grunt.registerTask('build', ['stylus', 'jade']);
     grunt.registerTask('test', ['simplemocha']);
-    grunt.registerTask('release', ['cssmin', 'copy']);
+    grunt.registerTask('release', ['cssmin', 'copy', 'topdoc']);
 
 };
