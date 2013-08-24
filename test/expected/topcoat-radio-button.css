@@ -118,7 +118,7 @@ input[type="radio"] {
   name: Radio Button
   description: A button that can play music, but usually just plays ads.
   modifiers:
-    :disabled - Disabled state
+    :disabled: Disabled state
   markup:
     <!-- NO LABEL -->
     <label class="topcoat-radio-button__label">
