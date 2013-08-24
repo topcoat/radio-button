@@ -16,34 +16,45 @@
 *
 */
 @import radio-button
-
-/*
- Radio Button
- -----------
-
- :disabled - Disabled state
-
- .is-disabled - Simulates a disabled state on mobile devices
-
+/* topdoc
+  name: Radio Button
+  description: A button that can play music, but usually just plays ads.
+  modifiers:
+    :disabled - Disabled state
+  markup:
     <!-- NO LABEL -->
     <label class="topcoat-radio-button__label">
-        <input type="radio" name="topcoat">
-        <div class="topcoat-radio-button"></div>
+      <input type="radio" name="topcoat">
+      <div class="topcoat-radio-button"></div>
     </label>
     <br>
     <!-- LEFT LABEL -->
     <label class="topcoat-radio-button__label">
-        Left label
-        <input type="radio" name="topcoat">
-        <div class="topcoat-radio-button"></div>
+      Left label
+      <input type="radio" name="topcoat">
+      <div class="topcoat-radio-button"></div>
     </label>
     <br>
     <!-- RIGHT LABEL -->
     <label class="topcoat-radio-button__label">
-        <input type="radio" name="topcoat">
-        <div class="topcoat-radio-button"></div>
-        Right label
+      <input type="radio" name="topcoat">
+      <div class="topcoat-radio-button"></div>
+      Right label
     </label>
+    <br>
+    <!-- DISABLED -->
+    <label class="topcoat-radio-button__label">
+      <input type="radio" name="topcoat" Disabled>
+      <div class="topcoat-radio-button"></div>
+      Disabled
+    </label>
+  examples:
+    Radio Button Codepen: http://codepen.io/Topcoat/pen/HDcJj
+  tags:
+    - desktop
+    - light
+    - mobile
+    - Radio
 */
 input[type="radio"]
   height var-size--radio-button
@@ -85,11 +96,9 @@ input[type="radio"]:checked + .topcoat-radio-button:after
   border var-border--radio-button
   box-shadow var-box-shadow--radio-button
 
-input[type="radio"]:focus + .topcoat-radio-button:before,
-.topcoat-radio-button__label.is-focused > .topcoat-radio-button:before
+input[type="radio"]:focus + .topcoat-radio-button:before
   border var-border--focus
   box-shadow var-box-shadow--focus
 
-.topcoat-radio-button__label:disabled,
-.topcoat-radio-button__label.is-disabled
+.topcoat-radio-button__label:disabled
   @extend .radio-button--disabled
