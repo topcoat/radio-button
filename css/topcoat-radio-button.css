@@ -109,39 +109,50 @@ input[type="radio"] {
   background-clip: padding-box;
 }
 .radio-button--disabled,
-.topcoat-radio-button__label:disabled,
-.topcoat-radio-button__label.is-disabled {
+.topcoat-radio-button__label:disabled {
   opacity: 0.3;
   cursor: default;
   pointer-events: none;
 }
-/*
- Radio Button
- -----------
-
- :disabled - Disabled state
-
- .is-disabled - Simulates a disabled state on mobile devices
-
+/* topdoc
+  name: Radio Button
+  description: A button that can play music, but usually just plays ads.
+  modifiers:
+    :disabled: Disabled state
+  markup:
     <!-- NO LABEL -->
     <label class="topcoat-radio-button__label">
-        <input type="radio" name="topcoat">
-        <div class="topcoat-radio-button"></div>
+      <input type="radio" name="topcoat">
+      <div class="topcoat-radio-button"></div>
     </label>
     <br>
     <!-- LEFT LABEL -->
     <label class="topcoat-radio-button__label">
-        Left label
-        <input type="radio" name="topcoat">
-        <div class="topcoat-radio-button"></div>
+      Left label
+      <input type="radio" name="topcoat">
+      <div class="topcoat-radio-button"></div>
     </label>
     <br>
     <!-- RIGHT LABEL -->
     <label class="topcoat-radio-button__label">
-        <input type="radio" name="topcoat">
-        <div class="topcoat-radio-button"></div>
-        Right label
+      <input type="radio" name="topcoat">
+      <div class="topcoat-radio-button"></div>
+      Right label
     </label>
+    <br>
+    <!-- DISABLED -->
+    <label class="topcoat-radio-button__label">
+      <input type="radio" name="topcoat" Disabled>
+      <div class="topcoat-radio-button"></div>
+      Disabled
+    </label>
+  examples:
+    Radio Button Codepen: http://codepen.io/Topcoat/pen/HDcJj
+  tags:
+    - desktop
+    - light
+    - mobile
+    - Radio
 */
 input[type="radio"] {
   height: 2rem;
@@ -180,8 +191,7 @@ input[type="radio"]:checked + .topcoat-radio-button:after {
   -webkit-box-shadow: 0 1px rgba(255,255,255,0.5);
   box-shadow: 0 1px rgba(255,255,255,0.5);
 }
-input[type="radio"]:focus + .topcoat-radio-button:before,
-.topcoat-radio-button__label.is-focused > .topcoat-radio-button:before {
+input[type="radio"]:focus + .topcoat-radio-button:before {
   border: 1px solid #0940fd;
   -webkit-box-shadow: 0 0 0 2px #6fb5f1;
   box-shadow: 0 0 0 2px #6fb5f1;
