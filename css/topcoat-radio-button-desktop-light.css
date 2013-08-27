@@ -155,8 +155,8 @@ input[type="radio"]:checked + .topcoat-radio-button:after {
 }
 .topcoat-radio-button:after {
   opacity: 0;
-  width: 0.5rem;
-  height: 0.5rem;
+  width: 0.35rem;
+  height: 0.35rem;
   background: #666;
   border: 1px solid rgba(0,0,0,0.1);
   -webkit-box-shadow: 0 1px rgba(255,255,255,0.5);
