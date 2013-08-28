@@ -70,11 +70,11 @@
                 <div>
                   <h3>CSS</h3>
                   <pre class="css"><code data-language="css">input[type=&quot;radio&quot;] {
-  height: 1rem;
-  width: 1rem;
+  height: 1.063rem;
+  width: 1.063rem;
   margin-top: 0;
-  margin-right: -1rem;
-  margin-bottom: -1rem;
+  margin-right: -1.063rem;
+  margin-bottom: -1.063rem;
   margin-left: 0;
 }
 input[type=&quot;radio&quot;]:checked + .topcoat-radio-button__checkmark:after {
@@ -82,11 +82,11 @@ input[type=&quot;radio&quot;]:checked + .topcoat-radio-button__checkmark:after {
 }
 .topcoat-radio-button {
   color: #c6c8c8;
-  line-height: 1rem;
+  line-height: 1.063rem;
 }
 .topcoat-radio-button__checkmark:before {
-  width: 1rem;
-  height: 1rem;
+  width: 1.063rem;
+  height: 1.063rem;
   background: #595b5b;
   border: 1px solid #303233;
   -webkit-box-shadow: inset 0 1px #727373;
@@ -94,17 +94,24 @@ input[type=&quot;radio&quot;]:checked + .topcoat-radio-button__checkmark:after {
 }
 .topcoat-radio-button__checkmark {
   position: relative;
-  width: 1rem;
-  height: 1rem;
+  width: 1.063rem;
+  height: 1.063rem;
 }
 .topcoat-radio-button__checkmark:after {
   opacity: 0;
-  width: 0.35rem;
-  height: 0.35rem;
+  width: 0.313rem;
+  height: 0.313rem;
   background: #fff;
   border: 1px solid rgba(255,255,255,0.1);
   -webkit-box-shadow: 0 1px rgba(255,255,255,0.5);
   box-shadow: 0 1px rgba(255,255,255,0.5);
+  -webkit-transform: none;
+  -moz-transform: none;
+  -o-transform: none;
+  -ms-transform: none;
+  transform: none;
+  top: 0.313rem;
+  left: 0.313rem;
 }
 input[type=&quot;radio&quot;]:focus + .topcoat-radio-button__checkmark:before {
   border: 1px solid #0940fd;
