@@ -22,33 +22,36 @@
   modifiers:
   markup:
     <!-- NO LABEL -->
-    <label class="topcoat-radio-button__label">
+    <label class="topcoat-radio-button">
       <input type="radio" name="topcoat">
-      <div class="topcoat-radio-button"></div>
+      <div class="topcoat-radio-button__checkmark"></div>
     </label>
+    <br>
     <br>
     <!-- LEFT LABEL -->
-    <label class="topcoat-radio-button__label">
+    <label class="topcoat-radio-button">
       Left label
       <input type="radio" name="topcoat">
-      <div class="topcoat-radio-button"></div>
+      <div class="topcoat-radio-button__checkmark"></div>
     </label>
     <br>
+    <br>
     <!-- RIGHT LABEL -->
-    <label class="topcoat-radio-button__label">
+    <label class="topcoat-radio-button">
       <input type="radio" name="topcoat">
-      <div class="topcoat-radio-button"></div>
+      <div class="topcoat-radio-button__checkmark"></div>
       Right label
     </label>
     <br>
+    <br>
     <!-- DISABLED -->
-    <label class="topcoat-radio-button__label">
+    <label class="topcoat-radio-button">
       <input type="radio" name="topcoat" Disabled>
-      <div class="topcoat-radio-button"></div>
+      <div class="topcoat-radio-button__checkmark"></div>
       Disabled
     </label>
   examples:
-    Radio Button Codepen: http://codepen.io/Topcoat/pen/HDcJj
+    Mobile Radio Button: http://codepen.io/Topcoat/pen/HDcJj
   tags:
     - desktop
     - light
@@ -63,15 +66,15 @@ input[type="radio"]
   margin-bottom -@height
   margin-left 0
 
-input[type="radio"]:checked + .topcoat-radio-button:after
+input[type="radio"]:checked + .topcoat-radio-button__checkmark:after
   opacity 1
 
-.topcoat-radio-button__label
+.topcoat-radio-button
   @extend .radio-button__label
   color var-color
   line-height var-size--radio-button
 
-.topcoat-radio-button:before
+.topcoat-radio-button__checkmark:before
   @extend .radio-button:before
   width var-size--radio-button
   height var-size--radio-button
@@ -79,13 +82,13 @@ input[type="radio"]:checked + .topcoat-radio-button:after
   border var-border
   box-shadow var-box-shadow
 
-.topcoat-radio-button
+.topcoat-radio-button__checkmark
   @extend .radio-button
   position relative
   width var-size--radio-button
   height var-size--radio-button
 
-.topcoat-radio-button:after
+.topcoat-radio-button__checkmark:after
   @extend .radio-button:after
   opacity 0
   width var-size--radio-button--checked
@@ -94,6 +97,10 @@ input[type="radio"]:checked + .topcoat-radio-button:after
   border var-border--radio-button
   box-shadow var-box-shadow--radio-button
 
-input[type="radio"]:focus + .topcoat-radio-button:before
+input[type="radio"]:focus + .topcoat-radio-button__checkmark:before
   border var-border--focus
   box-shadow var-box-shadow--focus
+
+input[type="radio"]:disabled + .topcoat-radio-button__checkmark
+  @extend .radio-button--disabled
+
