@@ -24,9 +24,27 @@ var grunt = require('grunt'),
 describe('Topcoat radio-button', function() {
     'use strict';
 
-    it('should output correct css', function() {
+    it('should output correct desktop dark css', function() {
         var actual = grunt.file.read('css/topcoat-radio-button-desktop-dark.css');
         var expected = grunt.file.read('test/expected/topcoat-radio-button-desktop-dark.css');
+        assert.equal(actual, expected, 'should generate correct css');
+    });
+
+    it('should output correct desktop light css', function() {
+        var actual = grunt.file.read('css/topcoat-radio-button-desktop-light.css');
+        var expected = grunt.file.read('test/expected/topcoat-radio-button-desktop-light.css');
+        assert.equal(actual, expected, 'should generate correct css');
+    });
+
+    it('should output correct mobile dark css', function() {
+        var actual = grunt.file.read('css/topcoat-radio-button-mobile-dark.css');
+        var expected = grunt.file.read('test/expected/topcoat-radio-button-mobile-dark.css');
+        assert.equal(actual, expected, 'should generate correct css');
+    });
+
+    it('should output correct mobile light css', function() {
+        var actual = grunt.file.read('css/topcoat-radio-button-mobile-light.css');
+        var expected = grunt.file.read('test/expected/topcoat-radio-button-mobile-light.css');
         assert.equal(actual, expected, 'should generate correct css');
     });
 
