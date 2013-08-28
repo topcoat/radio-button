@@ -21,18 +21,31 @@
 var grunt = require('grunt'),
     assert = require('assert');
 
-describe('Topcoat Radio Button', function() {
+describe('Topcoat radio-button', function() {
     'use strict';
 
     it('should output correct css', function() {
-        var actual = grunt.file.read('css/topcoat-radio-button.css');
-        var expected = grunt.file.read('test/expected/topcoat-radio-button.css');
+        var actual = grunt.file.read('css/topcoat-radio-button-desktop-dark.css');
+        var expected = grunt.file.read('test/expected/topcoat-radio-button-desktop-dark.css');
         assert.equal(actual, expected, 'should generate correct css');
     });
 
-    it('should not have any unrendered variables', function() {
-        var actual = grunt.file.read('css/topcoat-radio-button.css');
+    it('should not have any unrendered variables desktop dark', function() {
+        var actual = grunt.file.read('css/topcoat-radio-button-desktop-dark.css');
+        assert.equal(actual.match(/var-[a-z-]*[a-z]+/g), null, 'should not have missing vars');
+    });
+    it('should not have any unrendered variables desktop light', function() {
+        var actual = grunt.file.read('css/topcoat-radio-button-desktop-light.css');
+        assert.equal(actual.match(/var-[a-z-]*[a-z]+/g), null, 'should not have missing vars');
+    });
+    it('should not have any unrendered variables mobile dark', function() {
+        var actual = grunt.file.read('css/topcoat-radio-button-mobile-dark.css');
+        assert.equal(actual.match(/var-[a-z-]*[a-z]+/g), null, 'should not have missing vars');
+    });
+    it('should not have any unrendered variables mobile light', function() {
+        var actual = grunt.file.read('css/topcoat-radio-button-mobile-light.css');
         assert.equal(actual.match(/var-[a-z-]*[a-z]+/g), null, 'should not have missing vars');
     });
 
 });
+

@@ -24,24 +24,64 @@ module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        
+
         clean: {
             release: ['css'],
         },
 
         stylus: {
-            compile: {
-                    options: {
-                        paths: ['node_modules/topcoat-utils/src/mixins', 'node_modules/topcoat-radio-button-base/src', 'node_modules/topcoat-theme/src', 'node_modules/topcoat-theme/src/includes'],
-                        import: ['theme-topcoat-mobile-light', 'global', 'fonts', 'nib'],
-                        compress: false
-                    },
-                    files: [{
-                        src: 'src/topcoat-radio-button.styl',
-                        dest: 'css/topcoat-radio-button.css'
-                    }]
-                }
+            mobilelight: {
+                options: {
+                    paths: ['node_modules/topcoat-radio-button-base/src', 'node_modules/topcoat-utils/src/mixins', 'node_modules/topcoat-theme/src'],
+                    import: ['theme-topcoat-mobile-light', 'nib'],
+                    compress: false
+                },
+
+                files: [{
+                    src: 'src/topcoat-radio-button.styl',
+                    dest: 'css/topcoat-radio-button-mobile-light.css'
+                }]
+            },
+
+            mobiledark: {
+                options: {
+                    paths: ['node_modules/topcoat-radio-button-base/src', 'node_modules/topcoat-utils/src/mixins', 'node_modules/topcoat-theme/src'],
+                    import: ['theme-topcoat-mobile-dark', 'nib'],
+                    compress: false
+                },
+
+                files: [{
+                    src: 'src/topcoat-radio-button.styl',
+                    dest: 'css/topcoat-radio-button-mobile-dark.css'
+                }]
+            },
+
+            desktoplight: {
+                options: {
+                    paths: ['node_modules/topcoat-radio-button-base/src', 'node_modules/topcoat-utils/src/mixins', 'node_modules/topcoat-theme/src'],
+                    import: ['theme-topcoat-desktop-light', 'nib'],
+                    compress: false
+                },
+                files: [{
+                    src: 'src/topcoat-radio-button.styl',
+                    dest: 'css/topcoat-radio-button-desktop-light.css'
+                }]
+            },
+
+            desktopdark: {
+                options: {
+                    paths: ['node_modules/topcoat-radio-button-base/src', 'node_modules/topcoat-utils/src/mixins', 'node_modules/topcoat-theme/src'],
+                    import: ['theme-topcoat-desktop-dark', 'nib'],
+                    compress: false
+                },
+
+                files: [{
+                    src: 'src/topcoat-radio-button.styl',
+                    dest: 'css/topcoat-radio-button-desktop-dark.css'
+                }]
+            }
         },
+
         topdoc: {
             usageguides: {
                 options: {
@@ -59,23 +99,38 @@ module.exports = function(grunt) {
         cssmin: {
             minify: {
                 expand: true,
-                cwd: 'css',
+                cwd: 'release/css/',
                 src: ['*.css', '!*.min.css'],
-                dest: 'css',
+                dest: 'release/css/',
                 ext: '.min.css'
             }
         },
 
-        jade: {
-            compile: {
-                expand: true,
-                cwd: 'test/perf',
-                src: ['*.jade'],
-                dest: 'test/perf/',
-                ext: '.test.html'
+        topdoc: {
+            usageguides: {
+                options: {
+                    source: 'css',
+                    destination: "demo",
+                    template: "node_modules/topdoc-theme/",
+                    templateData: {
+                      "title": "Topcoat",
+                      "subtitle": "CSS for clean and fast web apps",
+                      "homeURL": "http://topcoat.io"
+                    }
+                }
             }
         },
 
+        copy: {
+            release: {
+                files: [{
+                    expand: true,
+                    flatten: true,
+                    src: 'node_modules/topcoat-theme/img/light-sprites2x.png',
+                    dest: 'img'
+                }]
+            }
+        },
 
         simplemocha: {
             all: {
@@ -93,17 +148,13 @@ module.exports = function(grunt) {
     // These plugins provide necessary tasks.
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-stylus');
-    grunt.loadNpmTasks('grunt-contrib-jade');
     grunt.loadNpmTasks('grunt-simple-mocha');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-topdoc');
 
-    // Default task.
-    grunt.registerTask('default', ['clean', 'build', 'test', 'release']);
-    grunt.registerTask('build', ['stylus', 'jade']);
+    grunt.registerTask('default', ['clean', 'build', 'test','release']);
+    grunt.registerTask('build', ['stylus']);
     grunt.registerTask('test', ['simplemocha']);
     grunt.registerTask('release', ['cssmin', 'topdoc']);
-
 };
