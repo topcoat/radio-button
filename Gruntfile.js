@@ -132,16 +132,6 @@ module.exports = function(grunt) {
             }
         },
 
-        jade: {
-            compile: {
-                expand: true,
-                cwd: 'test/perf',
-                src: ['*.jade'],
-                dest: 'test/perf/',
-                ext: '.test.html'
-            }
-        },
-
         simplemocha: {
             all: {
                 src: ['test/*.test.js']
