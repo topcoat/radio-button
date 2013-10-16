@@ -79,6 +79,8 @@
 }
 input[type=&quot;radio&quot;]:checked + .topcoat-radio-button__checkmark:after {
   opacity: 1;
+  -ms-filter: none;
+  filter: none;
 }
 .topcoat-radio-button {
   color: #c6c8c8;
@@ -88,9 +90,9 @@ input[type=&quot;radio&quot;]:checked + .topcoat-radio-button__checkmark:after {
   width: 1.875rem;
   height: 1.875rem;
   background: #595b5b;
-  border: 1px solid #303233;
-  -webkit-box-shadow: inset 0 1px #727373;
-  box-shadow: inset 0 1px #727373;
+  border: 1px solid #333434;
+  -webkit-box-shadow: inset 0 1px #737373;
+  box-shadow: inset 0 1px #737373;
 }
 .topcoat-radio-button__checkmark {
   position: relative;
@@ -99,12 +101,14 @@ input[type=&quot;radio&quot;]:checked + .topcoat-radio-button__checkmark:after {
 }
 .topcoat-radio-button__checkmark:after {
   opacity: 0;
+  -ms-filter: &quot;progid:DXImageTransform.Microsoft.Alpha(Opacity=0)&quot;;
+  filter: alpha(opacity=0);
   width: 0.875rem;
   height: 0.875rem;
-  background: #fff;
-  border: 1px solid rgba(255,255,255,0.1);
-  -webkit-box-shadow: 0 1px rgba(255,255,255,0.5);
-  box-shadow: 0 1px rgba(255,255,255,0.5);
+  background: #c6c8c8;
+  border: 1px solid rgba(0,0,0,0.05);
+  -webkit-box-shadow: 0 1px rgba(255,255,255,0.1);
+  box-shadow: 0 1px rgba(255,255,255,0.1);
   -webkit-transform: none;
   -moz-transform: none;
   -o-transform: none;
@@ -114,9 +118,15 @@ input[type=&quot;radio&quot;]:checked + .topcoat-radio-button__checkmark:after {
   left: 7px;
 }
 input[type=&quot;radio&quot;]:focus + .topcoat-radio-button__checkmark:before {
-  border: 1px solid #0940fd;
-  -webkit-box-shadow: 0 0 0 2px #6fb5f1;
-  box-shadow: 0 0 0 2px #6fb5f1;
+  border: 1px solid #0036ff;
+  -webkit-box-shadow: inset 0 1px rgba(255,255,255,0.36), 0 0 0 2px #6fb5f1;
+  box-shadow: inset 0 1px rgba(255,255,255,0.36), 0 0 0 2px #6fb5f1;
+}
+input[type=&quot;radio&quot;]:active + .topcoat-radio-button__checkmark:before {
+  border: 1px solid #333434;
+  background-color: #3f4041;
+  -webkit-box-shadow: inset 0 1px rgba(0,0,0,0.05);
+  box-shadow: inset 0 1px rgba(0,0,0,0.05);
 }
 </code></pre>
                 </div>
