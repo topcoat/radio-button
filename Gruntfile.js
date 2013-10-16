@@ -137,7 +137,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-autoprefixer');
 
     grunt.registerTask('default', ['clean', 'build', 'test','release']);
-    grunt.registerTask('build', ['stylus']);
+    grunt.registerTask('build', ['stylus', 'autoprefixer']);
     grunt.registerTask('test', ['simplemocha']);
-    grunt.registerTask('release', ['autoprefixer', 'cssmin', 'topdoc']);
+    grunt.registerTask('release', ['cssmin', 'topdoc']);
 };
