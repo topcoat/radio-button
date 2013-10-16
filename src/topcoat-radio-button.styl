@@ -102,8 +102,18 @@ input[type="radio"]:checked + .topcoat-radio-button__checkmark:after
 
 input[type="radio"]:focus + .topcoat-radio-button__checkmark:before
   border var-border--focus
-  box-shadow var-box-shadow--focus
+  box-shadow var-box-shadow--cta, var-box-shadow--focus
+
+input[type="radio"]:active + .topcoat-radio-button__checkmark:before
+  border var-border
+  background-color var-background-color--down
+  box-shadow var-box-shadow--down
 
 input[type="radio"]:disabled + .topcoat-radio-button__checkmark
   @extend .radio-button--disabled
+
+input[type="radio"]:disabled:active + .topcoat-radio-button__checkmark:before
+  border var-border
+  background var-background-color
+  box-shadow var-box-shadow
 
