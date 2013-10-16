@@ -15,25 +15,24 @@
 * limitations under the License.
 *
 */
+
 input[type="radio"] {
   position: absolute;
   overflow: hidden;
   padding: 0;
   border: 0;
   opacity: 0.001;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
   z-index: 1;
   vertical-align: top;
   outline: none;
 }
+
 .radio-button,
 .topcoat-radio-button__checkmark {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-background-clip: padding;
-  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
   background-clip: padding-box;
   position: relative;
   display: inline-block;
@@ -44,6 +43,7 @@ input[type="radio"] {
   -ms-user-select: none;
   user-select: none;
 }
+
 .radio-button__label,
 .topcoat-radio-button {
   position: relative;
@@ -55,42 +55,41 @@ input[type="radio"] {
   -ms-user-select: none;
   user-select: none;
 }
+
 .radio-button:before,
 .radio-button:after,
 .topcoat-radio-button__checkmark:before,
 .topcoat-radio-button__checkmark:after {
   content: '';
   position: absolute;
-  -webkit-border-radius: 100%;
   border-radius: 100%;
 }
+
 .radio-button:after,
 .topcoat-radio-button__checkmark:after {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+
 .radio-button:before,
 .topcoat-radio-button__checkmark:before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-background-clip: padding;
-  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
+
 .radio-button--disabled,
 input[type="radio"]:disabled + .topcoat-radio-button__checkmark {
   opacity: 0.3;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
-  filter: alpha(opacity=30);
   cursor: default;
   pointer-events: none;
 }
+
 /* topdoc
   name: Radio Button
   description: A button that can play music, but usually just plays ads.
@@ -133,6 +132,7 @@ input[type="radio"]:disabled + .topcoat-radio-button__checkmark {
     - mobile
     - Radio
 */
+
 input[type="radio"] {
   height: 1.063rem;
   width: 1.063rem;
@@ -141,15 +141,16 @@ input[type="radio"] {
   margin-bottom: -1.063rem;
   margin-left: 0;
 }
+
 input[type="radio"]:checked + .topcoat-radio-button__checkmark:after {
   opacity: 1;
-  -ms-filter: none;
-  filter: none;
 }
+
 .topcoat-radio-button {
   color: #454545;
   line-height: 1.063rem;
 }
+
 .topcoat-radio-button__checkmark:before {
   width: 1.063rem;
   height: 1.063rem;
@@ -158,15 +159,15 @@ input[type="radio"]:checked + .topcoat-radio-button__checkmark:after {
   -webkit-box-shadow: inset 0 1px #fff;
   box-shadow: inset 0 1px #fff;
 }
+
 .topcoat-radio-button__checkmark {
   position: relative;
   width: 1.063rem;
   height: 1.063rem;
 }
+
 .topcoat-radio-button__checkmark:after {
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
   width: 0.313rem;
   height: 0.313rem;
   background: #454545;
@@ -174,24 +175,25 @@ input[type="radio"]:checked + .topcoat-radio-button__checkmark:after {
   -webkit-box-shadow: 0 1px rgba(255,255,255,0.5);
   box-shadow: 0 1px rgba(255,255,255,0.5);
   -webkit-transform: none;
-  -moz-transform: none;
-  -o-transform: none;
   -ms-transform: none;
   transform: none;
   top: 0.313rem;
   left: 0.313rem;
 }
+
 input[type="radio"]:focus + .topcoat-radio-button__checkmark:before {
   border: 1px solid #0036ff;
   -webkit-box-shadow: inset 0 1px rgba(255,255,255,0.36), 0 0 0 2px #6fb5f1;
   box-shadow: inset 0 1px rgba(255,255,255,0.36), 0 0 0 2px #6fb5f1;
 }
+
 input[type="radio"]:active + .topcoat-radio-button__checkmark:before {
   border: 1px solid #9daca9;
   background-color: #d2d6d6;
   -webkit-box-shadow: inset 0 1px rgba(0,0,0,0.1);
   box-shadow: inset 0 1px rgba(0,0,0,0.1);
 }
+
 input[type="radio"]:disabled:active + .topcoat-radio-button__checkmark:before {
   border: 1px solid #9daca9;
   background: #e5e9e8;

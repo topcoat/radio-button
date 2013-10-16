@@ -1,5 +1,4 @@
-/**
-*
+/** *
 * Copyright 2012 Adobe Systems Inc.;
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,11 +29,14 @@ module.exports = function(grunt) {
         },
 
         stylus: {
+            options: {
+                paths: grunt.file.expand('node_modules/topcoat-*/src'),
+                compress: false
+            },
+
             mobilelight: {
                 options: {
-                    paths: ['node_modules/topcoat-radio-button-base/src', 'node_modules/topcoat-utils/src', 'node_modules/topcoat-theme/src'],
-                    import: ['theme-topcoat-mobile-light', 'nib'],
-                    compress: false
+                    import: ['theme-topcoat-mobile-light'],
                 },
 
                 files: [{
@@ -45,9 +47,7 @@ module.exports = function(grunt) {
 
             mobiledark: {
                 options: {
-                    paths: ['node_modules/topcoat-radio-button-base/src', 'node_modules/topcoat-utils/src', 'node_modules/topcoat-theme/src'],
-                    import: ['theme-topcoat-mobile-dark', 'nib'],
-                    compress: false
+                    import: ['theme-topcoat-mobile-dark'],
                 },
 
                 files: [{
@@ -58,9 +58,7 @@ module.exports = function(grunt) {
 
             desktoplight: {
                 options: {
-                    paths: ['node_modules/topcoat-radio-button-base/src', 'node_modules/topcoat-utils/src', 'node_modules/topcoat-theme/src'],
-                    import: ['theme-topcoat-desktop-light', 'nib'],
-                    compress: false
+                    import: ['theme-topcoat-desktop-light'],
                 },
                 files: [{
                     src: 'src/topcoat-radio-button.styl',
@@ -70,9 +68,7 @@ module.exports = function(grunt) {
 
             desktopdark: {
                 options: {
-                    paths: ['node_modules/topcoat-radio-button-base/src', 'node_modules/topcoat-utils/src', 'node_modules/topcoat-theme/src'],
-                    import: ['theme-topcoat-desktop-dark', 'nib'],
-                    compress: false
+                    import: ['theme-topcoat-desktop-dark'],
                 },
 
                 files: [{
@@ -96,6 +92,18 @@ module.exports = function(grunt) {
                 }
             }
         },
+
+        autoprefixer: {
+          dist: {
+            files: [{
+              expand: true,
+              cwd: 'css',
+              src: ['*.css', '!*.min.css'],
+              dest: 'css/'
+            }]
+          }
+        },
+
         cssmin: {
             minify: {
                 expand: true,
@@ -103,21 +111,6 @@ module.exports = function(grunt) {
                 src: ['*.css', '!*.min.css'],
                 dest: 'release/css/',
                 ext: '.min.css'
-            }
-        },
-
-        topdoc: {
-            usageguides: {
-                options: {
-                    source: 'css',
-                    destination: "demo",
-                    template: "node_modules/topdoc-theme/",
-                    templateData: {
-                      "title": "Topcoat",
-                      "subtitle": "CSS for clean and fast web apps",
-                      "homeURL": "http://topcoat.io"
-                    }
-                }
             }
         },
 
@@ -141,9 +134,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-topdoc');
+    grunt.loadNpmTasks('grunt-autoprefixer');
 
     grunt.registerTask('default', ['clean', 'build', 'test','release']);
     grunt.registerTask('build', ['stylus']);
     grunt.registerTask('test', ['simplemocha']);
-    grunt.registerTask('release', ['cssmin', 'topdoc']);
+    grunt.registerTask('release', ['autoprefixer', 'cssmin', 'topdoc']);
 };

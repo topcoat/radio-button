@@ -21,27 +21,18 @@ input[type="radio"] {
   padding: 0;
   border: 0;
   opacity: 0.001;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
   z-index: 1;
   vertical-align: top;
   outline: none;
 }
 .radio-button,
 .topcoat-radio-button__checkmark {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-background-clip: padding;
-  -moz-background-clip: padding;
   background-clip: padding-box;
   position: relative;
   display: inline-block;
   vertical-align: top;
   cursor: default;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 .radio-button__label,
@@ -50,9 +41,6 @@ input[type="radio"] {
   display: inline-block;
   vertical-align: top;
   cursor: default;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 .radio-button:before,
@@ -61,33 +49,22 @@ input[type="radio"] {
 .topcoat-radio-button__checkmark:after {
   content: '';
   position: absolute;
-  -webkit-border-radius: 100%;
   border-radius: 100%;
 }
 .radio-button:after,
 .topcoat-radio-button__checkmark:after {
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 .radio-button:before,
 .topcoat-radio-button__checkmark:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-background-clip: padding;
-  -moz-background-clip: padding;
   background-clip: padding-box;
 }
 .radio-button--disabled,
 input[type="radio"]:disabled + .topcoat-radio-button__checkmark {
   opacity: 0.3;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
-  filter: alpha(opacity=30);
   cursor: default;
   pointer-events: none;
 }
@@ -143,8 +120,6 @@ input[type="radio"] {
 }
 input[type="radio"]:checked + .topcoat-radio-button__checkmark:after {
   opacity: 1;
-  -ms-filter: none;
-  filter: none;
 }
 .topcoat-radio-button {
   color: #c6c8c8;
@@ -155,7 +130,6 @@ input[type="radio"]:checked + .topcoat-radio-button__checkmark:after {
   height: 1.875rem;
   background: #595b5b;
   border: 1px solid #333434;
-  -webkit-box-shadow: inset 0 1px #737373;
   box-shadow: inset 0 1px #737373;
 }
 .topcoat-radio-button__checkmark {
@@ -165,30 +139,26 @@ input[type="radio"]:checked + .topcoat-radio-button__checkmark:after {
 }
 .topcoat-radio-button__checkmark:after {
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
   width: 0.875rem;
   height: 0.875rem;
   background: #c6c8c8;
   border: 1px solid rgba(0,0,0,0.05);
-  -webkit-box-shadow: 0 1px rgba(255,255,255,0.1);
   box-shadow: 0 1px rgba(255,255,255,0.1);
-  -webkit-transform: none;
-  -moz-transform: none;
-  -o-transform: none;
-  -ms-transform: none;
   transform: none;
   top: 7px;
   left: 7px;
 }
 input[type="radio"]:focus + .topcoat-radio-button__checkmark:before {
   border: 1px solid #0036ff;
-  -webkit-box-shadow: inset 0 1px rgba(255,255,255,0.36), 0 0 0 2px #6fb5f1;
   box-shadow: inset 0 1px rgba(255,255,255,0.36), 0 0 0 2px #6fb5f1;
 }
 input[type="radio"]:active + .topcoat-radio-button__checkmark:before {
   border: 1px solid #333434;
   background-color: #3f4041;
-  -webkit-box-shadow: inset 0 1px rgba(0,0,0,0.05);
   box-shadow: inset 0 1px rgba(0,0,0,0.05);
+}
+input[type="radio"]:disabled:active + .topcoat-radio-button__checkmark:before {
+  border: 1px solid #333434;
+  background: #595b5b;
+  box-shadow: inset 0 1px #737373;
 }
