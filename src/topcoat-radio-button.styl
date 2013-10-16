@@ -112,3 +112,8 @@ input[type="radio"]:active + .topcoat-radio-button__checkmark:before
 input[type="radio"]:disabled + .topcoat-radio-button__checkmark
   @extend .radio-button--disabled
 
+input[type="radio"]:disabled:active + .topcoat-radio-button__checkmark:before
+  border var-border
+  background var-background-color
+  box-shadow var-box-shadow
+
