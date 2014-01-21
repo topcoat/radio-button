@@ -82,11 +82,6 @@ input[type="radio"] {
   vertical-align: top;
 }
 
-input[type="radio"]:active + .topcoat-radio-button__checkmark:before
-  border: var(border);
-  background-color: var(background-color--down);
-  box-shadow: var(box-shadow--down);
-
 input[type="radio"]:disabled + .topcoat-radio-button__checkmark {
   opacity: 0.3;
   cursor: default;
@@ -200,6 +195,12 @@ input[type="radio"]:checked + .topcoat-radio-button__checkmark:after {
 input[type="radio"]:focus + .topcoat-radio-button__checkmark:before {
   border: 1px solid hsla(227, 100%, 50%, 1);
   box-shadow: inset 0 1px hsla(0, 100%, 100%, 0.36), 0 0 0 2px hsla(208, 82%, 69%, 1);
+}
+
+input[type="radio"]:active + .topcoat-radio-button__checkmark:before {
+  border: 1px solid hsla(180, 1%, 20%, 1);
+  background-color: hsla(210, 2%, 25%, 1);
+  box-shadow: inset 0 1px hsla(0, 0%, 0%, 0.05);
 }
 
 input[type="radio"]:disabled:active + .topcoat-radio-button__checkmark:before {
